@@ -1,6 +1,10 @@
 import { createServer } from 'http';
 import app from './app';
 
+if (module.hot) {
+    module.hot.accept();
+}
+
 const port = process.env.PORT || 3000;
 
 createServer((request, response) => response.end(app()))
